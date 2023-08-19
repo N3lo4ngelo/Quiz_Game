@@ -39,3 +39,13 @@ body {
     padding: 5px 10px;
     border-radius: 5px;
   }
+
+  #barra-progresso {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #007bff;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+  }
