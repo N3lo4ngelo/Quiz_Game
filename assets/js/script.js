@@ -66,6 +66,8 @@ const perguntas = [
   ];
 
   let perguntaAtual = 0;
+  let pontuacao_player = 0
+  
   
   function mostrar_questao() {
     const quiz_box = document.querySelector('.box-quiz');
@@ -80,9 +82,11 @@ const perguntas = [
   }
 
   function verificar_resposta(index_selecionado) {
+    const elemento_pontuacao = document.getElementById('valor_pontuacao');
     const elemento_resultado = document.getElementById('resultado');
     if (index_selecionado === perguntas[perguntaAtual].index_resposta) {
         alert("Resposta Correta!")
+        pontuacao_player += 10
     } else {
         alert("Resposta Incorreta!")
     }
@@ -97,6 +101,7 @@ const perguntas = [
         btn.disabled = true;
       });
     }
+    elemento_pontuacao.textContent = pontuacao_player
   }
 
   mostrar_questao();
