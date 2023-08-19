@@ -67,10 +67,11 @@ const perguntas = [
 
   let perguntaAtual = 0;
   let pontuacao_player = 0
+  const elemento_total_pergunta = document.getElementById('total-perguntas');
+  elemento_total_pergunta.textContent = perguntas.length
   
   
   function mostrar_questao() {
-    const quiz_box = document.querySelector('.box-quiz');
     const questao_elemento = document.querySelector('.pergunta');
     const btn_respostas = document.querySelectorAll('.resposta');
 
@@ -84,6 +85,9 @@ const perguntas = [
   function verificar_resposta(index_selecionado) {
     const elemento_pontuacao = document.getElementById('valor_pontuacao');
     const elemento_resultado = document.getElementById('resultado');
+    const elemento_pergunta_atual = document.getElementById('pergunta-atual');
+    
+    
     if (index_selecionado === perguntas[perguntaAtual].index_resposta) {
         alert("Resposta Correta!")
         pontuacao_player += 10
@@ -94,6 +98,7 @@ const perguntas = [
     perguntaAtual++;
     if (perguntaAtual < perguntas.length) {
       mostrar_questao();
+      elemento_pergunta_atual.textContent = perguntaAtual + 1
     } else {
       elemento_resultado.textContent = "Quiz concluído!";
       const btn_respostas = document.querySelectorAll('.resposta');
